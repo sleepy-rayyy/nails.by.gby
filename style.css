@@ -1,0 +1,266 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe Script', 'Arial', cursive; /* Elegant, feminine font with fallback */
+    margin: 0;
+    padding: 0;
+    background-color: #FFE4E1; /* Soft pink background */
+    color: #333; /* Dark gray text */
+    line-height: 1.6;
+    /* Added scroll-behavior for smoother navigation fallback */
+    scroll-behavior: smooth; 
+}
+
+a {
+    text-decoration: none;
+    color: #FF69B4; /* Hot pink for links */
+}
+
+a:hover {
+    color: #FF1493; /* Deeper pink on hover */
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to right, #FFB6C1, #ADD8E6); /* Gradient from light pink to light blue */
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for elegance */
+}
+
+header .tagline {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    color: #FFF; /* White for contrast */
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #ADD8E6; /* Light blue */
+    padding: 0.5em;
+    text-align: center;
+    position: sticky;
+    top: 4em; /* Position below the header */
+    z-index: 999;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #FF69B4; /* Pink background on hover */
+    color: white;
+}
+
+/* Main Content Styles */
+main {
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 2em;
+    padding: 1em;
+    background-color: white;
+    border-radius: 15px; /* Rounded for a soft look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* 1. Section Fade-in Animation (Initial State) */
+.animated-section {
+    opacity: 0; /* Start invisible */
+    transform: translateY(30px); /* Start slightly below */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
+}
+
+/* 1. Section Fade-in Animation (Visible State) */
+.animated-section.visible {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to final position */
+}
+
+
+.hero h2 {
+    color: #FF69B4; /* Pink heading */
+    font-size: 2em;
+}
+
+.hero p {
+    font-size: 1.1em;
+}
+
+.hero .button {
+    display: inline-block;
+    background-color: #FF69B4;
+    color: white;
+    padding: 0.8em 1.5em;
+    border-radius: 20px; /* Rounded button */
+    font-weight: bold;
+    margin-top: 1em;
+    transition: background-color 0.3s, transform 0.1s; /* Add transform for hover */
+}
+
+/* 2. Pulse Animation for the Button */
+.pulse-button {
+    /* Apply the animation */
+    animation: pulse 2s infinite ease-in-out; 
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.7); /* Hot Pink shadow, transparent at start/end */
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(255, 105, 180, 0); /* Expand shadow and fade out */
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 105, 180, 0);
+    }
+}
+
+.hero .button:hover {
+    background-color: #FF1493;
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* Gallery Styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+    justify-items: center;
+}
+
+.gallery-card {
+    background-color: #FFF;
+    border: 1px solid #FFB6C1; /* Light pink border */
+    border-radius: 10px;
+    padding: 1em;
+    text-align: center;
+    /* Added box-shadow to transition list */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; 
+}
+
+.gallery-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4); /* Pink shadow on hover */
+}
+
+.gallery-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.gallery-card h3 {
+    color: #FF69B4;
+}
+
+.view-details {
+    display: inline-block;
+    background-color: #ADD8E6;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    margin-top: 0.5em;
+    transition: background-color 0.3s;
+}
+
+.view-details:hover {
+    background-color: #FF69B4;
+}
+
+/* Services Styles */
+.services h2 {
+    color: #FF69B4;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+}
+
+.service-item {
+    background-color: #FFE4E1; /* Soft pink */
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Added transition for hover effect */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; 
+}
+
+.service-item h3 {
+    color: #FF69B4;
+}
+
+.service-item:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(to right, #ADD8E6, #FFB6C1);
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+footer a {
+    color: white;
+}
+
+.copyright {
+    font-size: 0.8em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 0.5em 0;
+    }
+    
+    .gallery-grid, .service-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+}
